@@ -37,13 +37,3 @@ jobs:
 
       - name: Run tests
         run: mvn test
-
-      - name: Generate test reports
-        run: mvn surefire-report:report
-
-      - name: Upload Test Results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-report
-          path: target/surefire-reports
